@@ -14,6 +14,7 @@ Contents:
    readme
    installation
    usage
+   sub/morse
    contributing
    authors
    history

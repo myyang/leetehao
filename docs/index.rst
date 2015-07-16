@@ -14,6 +14,8 @@ Contents:
    readme
    installation
    usage
+   sub/morse
+   sub/leet
    contributing
    authors
    history

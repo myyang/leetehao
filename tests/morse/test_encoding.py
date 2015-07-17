@@ -22,3 +22,12 @@ class EncodingTestCase(unittest.TestCase):
         # decode error
         msg = '.--------------.'
         self.assertRaises(encoding.MorseDecodeError, encoding.decode, msg)
+
+    def test_class(self):
+
+        message, encoded = 'hello world', '.... . .-.. .-.. --- / .-- --- .-. .-.. -..'
+        en, de = encoding.MorseEncoder(), encoding.MorseDecoder()
+
+        # normal case
+        self.assertEqual(en.encode(message), encoded)
+        self.assertEqual(de.decode(encoded), message.upper())

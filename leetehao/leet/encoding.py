@@ -82,6 +82,10 @@ def decode(message, encoding='utf-8', mapping=constants.MAP_INVERSE_TWO):
     :returns: decoded message
 
     """
-    for k, v in mapping.items():
-        message = re.sub(re.escape(k), v, message)
+    inv_map = dict((v, k) for (k, v) in mapping.items())
+    keys = constants.LETTER_FREQUENCY + list(
+        set(constants.LETTER_FREQUENCY).symmetric_difference(set(inv_map.keys())))
+
+    for k in keys:
+        message = re.sub(re.escape(inv_map[k]), k, message)
     return message

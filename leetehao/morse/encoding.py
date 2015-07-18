@@ -55,11 +55,9 @@ def encode(message='', encoding='utf-8', mapping=constants.MAP_FORWARD,
     :returns: encoded message
 
     """
-    _message, last = '', len(message) - 1
 
     try:
-        for i, v in enumerate(message.upper()):
-            _message += mapping[v] + ('' if i == last else spl)
+        _message = spl.join(list(map(lambda v: mapping[v], list(message.upper()))))
     except KeyError as e:
         raise MorseEncodeError(e.args[0])
 

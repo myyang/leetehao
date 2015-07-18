@@ -28,7 +28,9 @@ from __future__ import absolute_import
 import random
 import re
 
-from .import constants
+from leetehao import base
+
+from . import constants
 
 
 class LeetDecodeError(Exception):
@@ -85,3 +87,13 @@ def decode(message, encoding='utf-8', mapping=constants.MAP_INVERSE_TWO):
     for k, v in mapping.items():
         message = re.sub(re.escape(k), v, message)
     return message
+
+
+class LeetEncoder(base.BaseEncoder):
+
+    mapping = constants.MAP_ALPHABET_TWO
+
+
+class LeetDecoder(base.BaseDecoder):
+
+    mapping = constants.MAP_INVERSE_TWO

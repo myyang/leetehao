@@ -26,7 +26,7 @@ class EncodingTestCase(unittest.TestCase):
 
     def test_class(self):
 
-        message, encoded = 'hello world', '}{[-[_[_<>  vv<>[z[_|)'
+        message, encoded = 'hello world', '}{[-[_[_()  vv()[z[_|)'
 
         en, de = encoding.LeetEncoder(), encoding.LeetDecoder()
 

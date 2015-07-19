@@ -25,10 +25,9 @@ Members
 
 from __future__ import absolute_import
 
-import random
 import re
 
-from .import constants
+from . import constants
 
 
 class LeetDecodeError(Exception):
@@ -61,11 +60,9 @@ def encode(message='', encoding='utf-8', mapping=constants.MAP_FORWARD_TWO):
     :returns: encoded message
 
     """
-    _message, last = '', len(message) - 1
 
     try:
-        for i, v in enumerate(message.upper()):
-            _message += (mapping[v] if v in mapping else v)
+        _message = ''.join(list(map(lambda v: mapping.get(v, v), list(message.upper()))))
     except KeyError as e:
         raise LeetEncodeError(e.args[0])
 

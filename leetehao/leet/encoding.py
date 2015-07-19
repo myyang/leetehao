@@ -98,3 +98,12 @@ class LeetEncoder(base.BaseEncoder):
 class LeetDecoder(base.BaseDecoder):
 
     mapping = constants.MAP_INVERSE_TWO
+
+    def _decode(self, msg, *args, **kwargs):
+        inv_map = dict((v, k) for (k, v) in self.mapping.items())
+        keys = constants.LETTER_FREQUENCY + list(
+            set(constants.LETTER_FREQUENCY).symmetric_difference(set(inv_map.keys())))
+
+        for k in keys:
+            msg = re.sub(re.escape(inv_map[k]), k, msg)
+        return msg

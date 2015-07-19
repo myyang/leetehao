@@ -23,3 +23,25 @@ class EncodingTestCase(unittest.TestCase):
                 a=string.ascii_letters, n=string.digits)) for i in range(30)])
 
             self.assertEqual(encoding.decode(encoding.encode(msg)), msg.upper())
+
+    def test_coding_one(self):
+
+        message, encoded = 'hello world', '#&ll0_w02l)'
+
+        # normal case
+        self.assertEqual(
+            encoding.encode(message, mapping=encoding.constants.MAP_FORWARD_ONE), encoded)
+        self.assertEqual(
+            encoding.decode(encoded, mapping=encoding.constants.MAP_INVERSE_ONE), message.upper())
+
+        # random test
+        for i in range(100):
+            msg = ''.join([random.choice('{a}{n} '.format(
+                a=string.ascii_letters, n=string.digits)) for i in range(30)])
+
+            self.assertEqual(
+                encoding.decode(
+                    encoding.encode(msg, mapping=encoding.constants.MAP_FORWARD_ONE),
+                    mapping=encoding.constants.MAP_INVERSE_ONE),
+                msg.upper()
+            )

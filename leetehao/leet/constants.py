@@ -30,7 +30,7 @@ MAP_NUMERIC = {
     "2": "Too",
     "3": "Thee",
     "4": "For",
-    "5": "Fly",
+    "5": "Fy",
     "6": "Sx",
     "7": "Say",
     "8": "At",
@@ -44,7 +44,7 @@ MAP_ALPHABET_ONE = {
     "C": "[",
     "D": ")",
     "E": "&",
-    "F": "v",  # no ascii options for one charater
+    "F": "f",  # no ascii options for one charater
     "G": "6",
     "H": "#",
     "I": "!",

@@ -25,10 +25,11 @@ Members
 
 from __future__ import absolute_import
 
-import random
 import re
 
-from .import constants
+from leetehao import base
+
+from . import constants
 
 
 class LeetDecodeError(Exception):
@@ -61,11 +62,9 @@ def encode(message='', encoding='utf-8', mapping=constants.MAP_FORWARD_TWO):
     :returns: encoded message
 
     """
-    _message, last = '', len(message) - 1
 
     try:
-        for i, v in enumerate(message.upper()):
-            _message += (mapping[v] if v in mapping else v)
+        _message = ''.join(list(map(lambda v: mapping.get(v, v), list(message.upper()))))
     except KeyError as e:
         raise LeetEncodeError(e.args[0])
 
@@ -82,6 +81,29 @@ def decode(message, encoding='utf-8', mapping=constants.MAP_INVERSE_TWO):
     :returns: decoded message
 
     """
-    for k, v in mapping.items():
-        message = re.sub(re.escape(k), v, message)
+    inv_map = dict((v, k) for (k, v) in mapping.items())
+    keys = constants.LETTER_FREQUENCY + list(
+        set(constants.LETTER_FREQUENCY).symmetric_difference(set(inv_map.keys())))
+
+    for k in keys:
+        message = re.sub(re.escape(inv_map[k]), k, message)
     return message
+
+
+class LeetEncoder(base.BaseEncoder):
+
+    mapping = constants.MAP_ALPHABET_TWO
+
+
+class LeetDecoder(base.BaseDecoder):
+
+    mapping = constants.MAP_INVERSE_TWO
+
+    def _decode(self, msg, *args, **kwargs):
+        inv_map = dict((v, k) for (k, v) in self.mapping.items())
+        keys = constants.LETTER_FREQUENCY + list(
+            set(constants.LETTER_FREQUENCY).symmetric_difference(set(inv_map.keys())))
+
+        for k in keys:
+            msg = re.sub(re.escape(inv_map[k]), k, msg)
+        return msg

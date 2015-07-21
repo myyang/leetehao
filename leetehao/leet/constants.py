@@ -30,7 +30,7 @@ MAP_NUMERIC = {
     "2": "Too",
     "3": "Thee",
     "4": "For",
-    "5": "Fly",
+    "5": "Fy",
     "6": "Sx",
     "7": "Say",
     "8": "At",
@@ -44,7 +44,7 @@ MAP_ALPHABET_ONE = {
     "C": "[",
     "D": ")",
     "E": "&",
-    "F": "v",  # no ascii options for one charater
+    "F": "f",  # no ascii options for one charater
     "G": "6",
     "H": "#",
     "I": "!",
@@ -84,21 +84,21 @@ MAP_ALPHABET_TWO = {
     "J": "(/",
     "K": "]{",
     "L": "[_",
-    "M": "AA",
+    "M": "^^",
     "N": "/V",
-    "O": "<>",
-    "P": "|o",
+    "O": "()",
+    "P": "/*",
     "Q": "<|",
     "R": "[z",
     "S": "es",
     "T": "+ ",  # no ascii options for two charater
     "U": "L|",
-    "V": "|/",
+    "V": "\|",
     "W": "vv",
     "X": "><",
     "Y": "`/",
     "Z": "7_",
-    " ": "@@",
+    " ": "  ",
 }
 
 MAP_FORWARD_TWO = dict(chain(MAP_ALPHABET_TWO.items(), MAP_NUMERIC.items()))
@@ -133,4 +133,9 @@ MAP_MIXED = {
     " ": set(["G/"]),
 }
 
-SPLIT = '@@'
+SPLIT = '  '
+
+LETTER_FREQUENCY = [
+    ' ', 'E', 'T', 'A', 'O', 'I', 'N', 'S', 'R', 'H', 'L', 'D', 'C', 'U',
+    'M', 'F', 'P', 'G', 'W', 'Y', 'B', 'V', 'K', 'X', 'J', 'Q', 'Z']
+"""English"""

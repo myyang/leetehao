@@ -14,7 +14,6 @@ Example:
 
     >>> from leetehao import leet
     >>> leet.encode('hello world')
-    '}{[-[_[_<>@@vv<>[z[_|)'
-    >>> leet.encode('}{[-[_[_<>@@vv<>[z[_|)')
+    '}{[-[_[_()  vv()[z[_|)'
+    >>> leet.encode('}{[-[_[_()  vv()[z[_|)')
     'HELLO WORLD'
-

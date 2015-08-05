@@ -52,8 +52,8 @@ def encode(value):
             return U * v, x
 
     v, rem = value // 1000, value % 1000
-    s += constants.THOU * v
-    for u, h, d, n in [constants.HUND, constants.TENS, constants.UNIT]:
+    s += constants.ROMAN_THOU * v
+    for u, h, d, n in [constants.ROMAN_HUND, constants.ROMAN_TENS, constants.ROMAN_UNIT]:
         ap, rem = conv(rem, d, u, h, n)
         s += ap
 
@@ -61,16 +61,16 @@ def encode(value):
 
 
 def decode(message):
-    msg_set, val_set = set(message), set(constants.VALUE_MAPPING)
+    msg_set, val_set = set(message), set(constants.ROMAN_VALUE)
     if not val_set.issuperset(msg_set):
         raise RomanDecodeError(
             'Roman numerals ONLY contains: ["I", "V", "X", "L", "C", "D", "M"]')
     t = 0
     s = str(message).upper()
     for i in list(s):
-        t += constants.VALUE_MAPPING[i]
+        t += constants.ROMAN_VALUE[i]
 
-    for k in constants.CORRECTION_MAPPING:
+    for k in constants.ROMAN_CORRECTION:
         if k in s:
-            t += constants.CORRECTION_MAPPING[k]
+            t += constants.ROMAN_CORRECTION[k]
     return t

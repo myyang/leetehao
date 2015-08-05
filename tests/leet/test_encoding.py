@@ -46,9 +46,9 @@ class EncodingTestCase(unittest.TestCase):
 
         # normal case
         self.assertEqual(
-            encoding.encode(message, mapping=encoding.constants.MAP_FORWARD_ONE), encoded)
+            encoding.encode(message, mapping=encoding.constants.LEET_ENCODE_ONE), encoded)
         self.assertEqual(
-            encoding.decode(encoded, mapping=encoding.constants.MAP_INVERSE_ONE), message.upper())
+            encoding.decode(encoded, mapping=encoding.constants.LEET_DECODE_ONE), message.upper())
 
         # random test
         for i in range(100):
@@ -57,7 +57,7 @@ class EncodingTestCase(unittest.TestCase):
 
             self.assertEqual(
                 encoding.decode(
-                    encoding.encode(msg, mapping=encoding.constants.MAP_FORWARD_ONE),
-                    mapping=encoding.constants.MAP_INVERSE_ONE),
+                    encoding.encode(msg, mapping=encoding.constants.LEET_ENCODE_ONE),
+                    mapping=encoding.constants.LEET_DECODE_ONE),
                 msg.upper()
             )

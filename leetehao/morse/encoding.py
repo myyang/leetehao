@@ -46,8 +46,8 @@ class MorseEncodeError(Exception):
                 'mapping dictionary to resolve.'.format(s=' '.join(self.args)))
 
 
-def encode(message='', encoding='utf-8', mapping=constants.MAP_FORWARD,
-           spl=constants.SPLIT):
+def encode(message='', encoding='utf-8', mapping=constants.MORSE_ENCODE,
+           spl=constants.MORSE_SPLIT):
     """Encode mesaage
 
     :param message: message to encode
@@ -66,8 +66,8 @@ def encode(message='', encoding='utf-8', mapping=constants.MAP_FORWARD,
     return _message
 
 
-def decode(message, encoding='utf-8', mapping=constants.MAP_INVERSE,
-           spl=constants.SPLIT):
+def decode(message, encoding='utf-8', mapping=constants.MORSE_DECODE,
+           spl=constants.MORSE_SPLIT):
     """Decode mesaage
 
     :param message: message to decode
@@ -88,8 +88,8 @@ def decode(message, encoding='utf-8', mapping=constants.MAP_INVERSE,
 
 class MorseEncoder(base.BaseEncoder):
 
-    mapping = constants.MAP_FORWARD
-    spl = constants.SPLIT
+    mapping = constants.MORSE_ENCODE
+    spl = constants.MORSE_SPLIT
 
     def _encode(self, msg, *args, **kwargs):
         _msg, last = '', len(msg) - 1
@@ -105,8 +105,8 @@ class MorseEncoder(base.BaseEncoder):
 
 class MorseDecoder(base.BaseDecoder):
 
-    mapping = constants.MAP_INVERSE
-    spl = constants.SPLIT
+    mapping = constants.MORSE_DECODE
+    spl = constants.MORSE_SPLIT
 
     def _decode(self, msg, *args, **kwargs):
         ''' actual decode method '''

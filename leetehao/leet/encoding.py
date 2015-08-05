@@ -52,7 +52,7 @@ class LeetEncodeError(Exception):
                 'mapping dictionary to resolve.'.format(s=' '.join(self.args)))
 
 
-def encode(message='', encoding='utf-8', mapping=constants.MAP_FORWARD_TWO):
+def encode(message='', encoding='utf-8', mapping=constants.LEET_ENCODE_TWO):
     """Encode mesaage
 
     :param message: message to encode
@@ -71,7 +71,7 @@ def encode(message='', encoding='utf-8', mapping=constants.MAP_FORWARD_TWO):
     return _message
 
 
-def decode(message, encoding='utf-8', mapping=constants.MAP_INVERSE_TWO):
+def decode(message, encoding='utf-8', mapping=constants.LEET_DECODE_TWO):
     """Decode mesaage
 
     :param message: message to decode
@@ -92,12 +92,12 @@ def decode(message, encoding='utf-8', mapping=constants.MAP_INVERSE_TWO):
 
 class LeetEncoder(base.BaseEncoder):
 
-    mapping = constants.MAP_ALPHABET_TWO
+    mapping = constants.LEET_ENCODE_TWO
 
 
 class LeetDecoder(base.BaseDecoder):
 
-    mapping = constants.MAP_INVERSE_TWO
+    mapping = constants.LEET_DECODE_TWO
 
     def _decode(self, msg, *args, **kwargs):
         inv_map = dict((v, k) for (k, v) in self.mapping.items())

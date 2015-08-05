@@ -25,7 +25,7 @@ Members
 
 from itertools import chain
 
-MAP_NUMERIC = {
+LEET_NUMERIC = {
     "1": "On",
     "2": "Too",
     "3": "Thee",
@@ -38,7 +38,7 @@ MAP_NUMERIC = {
     "0": "Zero",
 }
 
-MAP_ALPHABET_ONE = {
+LEET_ALPHABET_ONE = {
     "A": "@",
     "B": "8",
     "C": "[",
@@ -68,10 +68,10 @@ MAP_ALPHABET_ONE = {
     " ": "_",
 }
 
-MAP_FORWARD_ONE = dict(chain(MAP_ALPHABET_ONE.items(), MAP_NUMERIC.items()))
-MAP_INVERSE_ONE = dict((v, k) for (k, v) in MAP_FORWARD_ONE.items())
+LEET_ENCODE_ONE = dict(chain(LEET_ALPHABET_ONE.items(), LEET_NUMERIC.items()))
+LEET_DECODE_ONE = dict((v, k) for (k, v) in LEET_ENCODE_ONE.items())
 
-MAP_ALPHABET_TWO = {
+LEET_ALPHABET_TWO = {
     "A": "(L",
     "B": "/3",
     "C": "[ ",  # no ascii options for two charater
@@ -101,10 +101,10 @@ MAP_ALPHABET_TWO = {
     " ": "  ",
 }
 
-MAP_FORWARD_TWO = dict(chain(MAP_ALPHABET_TWO.items(), MAP_NUMERIC.items()))
-MAP_INVERSE_TWO = dict((v, k) for (k, v) in MAP_FORWARD_TWO.items())
+LEET_ENCODE_TWO = dict(chain(LEET_ALPHABET_TWO.items(), LEET_NUMERIC.items()))
+LEET_DECODE_TWO = dict((v, k) for (k, v) in LEET_ENCODE_TWO.items())
 
-MAP_MIXED = {
+LEET_MIXED = {
     "A": set(["4", "/\\", "@", "/-\\", "^", "aye", "(L", "Д"]),
     "B": set(["8", "13", "|3", "ß", "P>", "|:", "!3", "(3", "/3", ")3", "|-]"]),
     "C": set(["[", "¢", "<", "(", "©"]),
@@ -133,7 +133,7 @@ MAP_MIXED = {
     " ": set(["G/"]),
 }
 
-SPLIT = '  '
+LEET_SPLIT = '  '
 
 LETTER_FREQUENCY = [
     ' ', 'E', 'T', 'A', 'O', 'I', 'N', 'S', 'R', 'H', 'L', 'D', 'C', 'U',

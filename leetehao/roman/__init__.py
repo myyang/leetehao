@@ -2,5 +2,5 @@
 
 __all__ = ['encoding']
 
-from leetehao.global_constants import leet as CONST
+from leetehao.global_constants import roman as CONST
 from .encoding import encode, decode

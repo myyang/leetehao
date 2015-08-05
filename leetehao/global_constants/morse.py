@@ -18,15 +18,15 @@ Functions:
 
 Variables:
 
-* :data:`MAP_NUMERIC`
-* :data:`MAP_NUMERIC_SHORT`
-* :data:`MAP_PUNCTUATION`
-* :data:`MAP_SYMBOL`
-* :data:`MAP_ALPHA`
-* :data:`MAP_FORWARD`
-* :data:`MAP_FORWARD_SHORT`
-* :data:`MAP_INVERSE`
-* :data:`MAP_INVERSE_SHORT`
+* :data:`MORSE_NUMERIC`
+* :data:`MORSE_NUMERIC_SHORT`
+* :data:`MORSE_PUNCTUATION`
+* :data:`MORSE_SYMBOL`
+* :data:`MORSE_ALPHA`
+* :data:`MORSE_ENCODE`
+* :data:`MORSE_ENCODE_SHORT`
+* :data:`MORSE_DECODE`
+* :data:`MORSE_DECODE_SHORT`
 
 Members
 -------
@@ -35,7 +35,7 @@ Members
 
 from itertools import chain
 
-MAP_NUMERIC = {
+MORSE_NUMERIC = {
     '1': '.----',
     '2': '..---',
     '3': '...--',
@@ -48,7 +48,7 @@ MAP_NUMERIC = {
     '0': '-----',
 }
 
-MAP_NUMERIC_SHORT = {
+MORSE_NUMERIC_SHORT = {
     '1': '.-',
     '2': '..-',
     '3': '...-',
@@ -61,7 +61,7 @@ MAP_NUMERIC_SHORT = {
     '0': '-',
 }
 
-MAP_PUNCTUATION = {
+MORSE_PUNCTUATION = {
     '.': '.-.-.-',
     ':': '---...',
     ',': '--..--',
@@ -82,7 +82,7 @@ MAP_PUNCTUATION = {
     '+': '.-.-.',
 }
 
-MAP_SYMBOL = {
+MORSE_SYMBOL = {
     'AAAAA': '.-.-.-.-.-',
     'AAA': '.-.-.-',
     'EEEEE': '．．．．．',
@@ -95,7 +95,7 @@ MAP_SYMBOL = {
     'SOS': '...---...',
 }
 
-MAP_ALPHA = {
+MORSE_ALPHA = {
     "A": ".-",
     "B": "-...",
     "C": "-.-.",
@@ -125,12 +125,12 @@ MAP_ALPHA = {
     " ": "/"
 }
 
-MAP_FORWARD = dict(chain(MAP_NUMERIC.items(), MAP_PUNCTUATION.items(), MAP_ALPHA.items()))
-MAP_FORWARD_SHORT = dict(
-    chain(MAP_NUMERIC_SHORT.items(), MAP_PUNCTUATION.items(), MAP_ALPHA.items())
+MORSE_ENCODE = dict(chain(MORSE_NUMERIC.items(), MORSE_PUNCTUATION.items(), MORSE_ALPHA.items()))
+MORSE_ENCODE_SHORT = dict(
+    chain(MORSE_NUMERIC_SHORT.items(), MORSE_PUNCTUATION.items(), MORSE_ALPHA.items())
 )
 
-MAP_INVERSE = dict((v, k) for (k, v) in MAP_FORWARD.items())
-MAP_INVERSE_SHORT = dict((v, k) for (k, v) in MAP_FORWARD_SHORT.items())
+MORSE_DECODE = dict((v, k) for (k, v) in MORSE_ENCODE.items())
+MORSE_DECODE_SHORT = dict((v, k) for (k, v) in MORSE_ENCODE_SHORT.items())
 
-SPLIT = " "
+MORSE_SPLIT = " "

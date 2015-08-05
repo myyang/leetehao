@@ -24,8 +24,7 @@ Members
 """
 
 from leetehao import base
-
-from . import constants
+from leetehao import global_constants as constants
 
 
 class MorseDecodeError(Exception):

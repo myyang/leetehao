@@ -24,7 +24,7 @@ Members
 """
 
 
-from . import constants
+from leetehao import global_constants as constants
 
 
 class RomanDecodeError(Exception):

@@ -1,6 +1,6 @@
 # encoding: utf-8
 
-__all__ = ['constants', 'encoding']
+__all__ = ['encoding']
 
-from . import constants
+from leetehao.global_constants import morse as CONST
 from .encoding import encode, decode

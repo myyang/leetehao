@@ -28,8 +28,7 @@ from __future__ import absolute_import
 import re
 
 from leetehao import base
-
-from . import constants
+from leetehao import global_constants as constants
 
 
 class LeetDecodeError(Exception):

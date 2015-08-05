@@ -9,9 +9,6 @@ leetehao
         :target: https://pypi.python.org/pypi/leetehao
 
 
-''
-
-* Free software: BSD license
 .. comment * Documentation: https://leetehao.readthedocs.org.
 
 Features
@@ -56,3 +53,8 @@ Roman numerals
     'MMDXLIX'
     >>> roman.encode('MMDXLIX')
     2549
+
+License
+-------
+
+* Free software: BSD license

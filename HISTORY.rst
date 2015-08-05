@@ -3,7 +3,9 @@
 History
 -------
 
-0.1.0 (2015-08-01)
----------------------
+0.1.0 (2015-08-??)
+~~~~~~~~~~~~~~~~~~
 
-* First release on PyPI.
+* Added Leet and Morse both function and class type 
+* Added limited Roman function
+* Collect and made constants overwritable

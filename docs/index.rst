@@ -17,6 +17,7 @@ Contents:
    sub/morse
    sub/leet
    sub/roman
+   sub/constants
    contributing
    authors
    history

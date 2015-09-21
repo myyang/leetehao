@@ -3,7 +3,7 @@
 History
 -------
 
-0.1.0 (2015-08-??)
+0.1.0 (2015-09-21)
 ~~~~~~~~~~~~~~~~~~
 
 * Added Leet and Morse both function and class type 

@@ -24,8 +24,8 @@ test_requirements = [
 
 setup(
     name='leetehao',
-    version='0.1.0',
-    description="''",
+    version='0.1.1',
+    description="En/decoder for: leet, morse, roman",
     long_description=readme + '\n\n' + history,
     author="Garfield",
     author_email='ymy1019@gmail.com',

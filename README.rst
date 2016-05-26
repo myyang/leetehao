@@ -28,7 +28,7 @@ Morse
     >>> from leetehao import morse
     >>> morse.encode('hello world')
     '.... . .-.. .-.. --- / .-- --- .-. .-.. -..'
-    >>> morse.encode('.... . .-.. .-.. --- / .-- --- .-. .-.. -..')
+    >>> morse.decode('.... . .-.. .-.. --- / .-- --- .-. .-.. -..')
     'HELLO WORLD'
 
 
@@ -40,7 +40,7 @@ Leet
     >>> from leetehao import leet
     >>> leet.encode('hello world')
     '}{[-[_[_()  vv()[z[_|)'
-    >>> leet.encode('}{[-[_[_()  vv()[z[_|)')
+    >>> leet.decode('}{[-[_[_()  vv()[z[_|)')
     'HELLO WORLD'
 
 
@@ -51,7 +51,7 @@ Roman numerals
     >>> from leetehao import roman
     >>> roman.encode(2549)
     'MMDXLIX'
-    >>> roman.encode('MMDXLIX')
+    >>> roman.decode('MMDXLIX')
     2549
 
 License
